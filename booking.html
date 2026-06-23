@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Consultation | Strategy Scheduler | TaxLienAdvisors</title>
+    <meta name="description" content="Use our interactive consultation scheduler. Complete our investor experience questionnaire and book your 1-on-1 strategy call.">
+    <meta name="keywords" content="schedule tax consultation, real estate strategy call, investing assessment questionnaire">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css?v=1.1">
+    
+    <!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <style>
+        /* Specific enhancements */
+        .availability-alert {
+            background-color: rgba(197, 160, 89, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: var(--border-radius);
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .availability-alert span {
+            background-color: var(--accent);
+            color: #0a192f;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        
+        .doc-checklist {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            max-width: 800px;
+            margin: 3rem auto 0 auto;
+        }
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .doc-card {
+            background-color: var(--bg-secondary);
+            border: 1px dashed var(--border);
+            border-radius: var(--border-radius);
+            padding: 1.25rem;
+            font-size: 0.85rem;
+        }
+        .doc-card h4 {
+            color: var(--primary);
+            font-family: var(--font-sans);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.2c2.4 2.1 4.7 4.2 7 6.3v6.5h-2v-6h-6v6H7v-6.5c2.3-2.1 4.6-4.2 7-6.3z"/></svg>
+                <span>TaxLien</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <a href="services.html" class="nav-link">Consulting Services</a>
+                <a href="guides.html" class="nav-link">Investment Guides</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-controls">
+                <button class="btn-icon theme-toggle" aria-label="Toggle Theme">
+                    <svg class="theme-icon-dark" viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18zm0-2a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM12 6a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V7a1 1 0 0 1 1-1zm0 10a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zm-7-5a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1zm10 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zm-6.36-4.64a1 1 0 0 1 1.41 0l.7.7a1 1 0 1 1-1.41 1.41l-.7-.7a1 1 0 0 1 0-1.41zm7.07 7.07a1 1 0 0 1 1.41 0l.7.7a1 1 0 1 1-1.41 1.41l-.7-.7a1 1 0 0 1 0-1.41zm-7.07 0a1 1 0 0 1 0-1.41l.7-.7a1 1 0 1 1 1.41 1.41l-.7.7a1 1 0 0 1-1.41 0zm7.07-7.07a1 1 0 0 1 0-1.41l.7-.7a1 1 0 1 1 1.41 1.41l-.7.7a1 1 0 0 1-1.41 0z"/></svg>
+                    <svg class="theme-icon-light" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 9.01 9.01 0 0 0-9-9zm0 16a7 7 0 1 1 7-7 7.008 7.008 0 0 1-7 7z"/></svg>
+                </button>
+                <button class="btn-icon rtl-toggle" aria-label="Toggle Direction">
+                    <span style="font-weight: 700; font-size: 0.85rem;">A↔أ</span>
+                </button>
+                <a href="booking.html" class="btn btn-primary active">Book Consultation</a>
+                <button class="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav">
+        <ul class="mobile-menu">
+            <li><a href="index.html" class="mobile-link">Home</a></li>
+            <li><a href="home2.html" class="mobile-link">Home 2</a></li>
+            <li><a href="services.html" class="mobile-link">Consulting Services</a></li>
+            <li><a href="guides.html" class="mobile-link">Investment Guides</a></li>
+            <li><a href="resources.html" class="mobile-link">Resources</a></li>
+            <li><a href="about.html" class="mobile-link">About Us</a></li>
+            <li><a href="contact.html" class="mobile-link">Contact</a></li>
+        </ul>
+        <a href="booking.html" class="btn btn-cta">Book a Consultation</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Header Banner -->
+        <section class="section-bg" style="padding-block: 4rem;">
+            <div class="container text-center">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <span class="section-tag">Interactive Scheduler</span>
+                    <h1 class="section-title">Schedule Advisory Call</h1>
+                    <p>Provide your investment goals and secure an available date on Marcus Vance's consulting calendar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Wizard Container -->
+        <section class="container">
+            <!-- NEW SECTION 1: Bidding Advisor Live Spot Availability Indicator -->
+            <div class="availability-alert">
+                <span>LIVE STATUS</span>
+                Only 3 consulting spots remain open for Marcus Vance this week. Reserve your calendar slot below.
+            </div>
+            
+            <div class="booking-wizard" id="booking-wizard">
+                <div class="wizard-header">
+                    <div class="wizard-title">
+                        <h3>Strategy Session Wizard</h3>
+                    </div>
+                    <div class="wizard-steps-indicator">
+                        <span class="step-indicator-dot active"></span>
+                        <span class="step-indicator-dot"></span>
+                        <span class="step-indicator-dot"></span>
+                        <span class="step-indicator-dot"></span>
+                    </div>
+                </div>
+
+                <div class="wizard-body">
+                    
+                    <!-- Step 1: Experience Assessment -->
+                    <div class="wizard-step active">
+                        <h2 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--accent);">Step 1: Experience Assessment</h2>
+                        <p style="margin-bottom: 2rem;">Help us customize the advisory dialogue to match your current real estate background.</p>
+                        
+                        <div class="selection-grid">
+                            <div class="selection-card">
+                                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                <h4>Beginner / Novice</h4>
+                                <p style="font-size: 0.8rem; margin-bottom: 0;">No prior tax lien purchases. Seeking foundational guidance.</p>
+                            </div>
+
+                            <div class="selection-card">
+                                <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+                                <h4>Active Investor</h4>
+                                <p style="font-size: 0.8rem; margin-bottom: 0;">Familiar with tax liens. Looking to increase yields and scale.</p>
+                            </div>
+
+                            <div class="selection-card">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                <h4>Corporate / Trust</h4>
+                                <p style="font-size: 0.8rem; margin-bottom: 0;">Representing institutional capital or family office holdings.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Questionnaire -->
+                    <div class="wizard-step">
+                        <h2 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--accent);">Step 2: Investment Parameters</h2>
+                        <p style="margin-bottom: 2rem;">Outline your capital thresholds and target geography preferences.</p>
+                        
+                        <div class="form-group">
+                            <label for="capital-range">Capital Allocation Budget</label>
+                            <select id="capital-range" class="form-control">
+                                <option value="" disabled selected>Select Budget Range</option>
+                                <option value="10k-50k">$10,000 - $50,000</option>
+                                <option value="50k-250k">$50,000 - $250,000</option>
+                                <option value="250k-1m">$250,000 - $1,000,000</option>
+                                <option value="1m-plus">$1,000,000+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="target-states">Preferred Bidding States / Locations</label>
+                            <input type="text" id="target-states" class="form-control" placeholder="e.g. Florida, Arizona, Iowa">
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Calendar & Slots -->
+                    <div class="wizard-step">
+                        <h2 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--accent);">Step 3: Choose Appointment Slot</h2>
+                        <p style="margin-bottom: 2rem;">Select an available session slot on Marcus Vance's digital calendar.</p>
+                        
+                        <div class="scheduler-widget">
+                            <!-- Simulated Month Calendar -->
+                            <div>
+                                <div class="calendar-header">
+                                    <h4 style="font-family: var(--font-sans); font-weight: 700; color: var(--primary);">June 2026</h4>
+                                </div>
+                                <div class="calendar-grid">
+                                    <span class="calendar-day-label">S</span>
+                                    <span class="calendar-day-label">M</span>
+                                    <span class="calendar-day-label">T</span>
+                                    <span class="calendar-day-label">W</span>
+                                    <span class="calendar-day-label">T</span>
+                                    <span class="calendar-day-label">F</span>
+                                    <span class="calendar-day-label">S</span>
+
+                                    <!-- Mock Dates -->
+                                    <span class="calendar-day day-empty"></span>
+                                    <span class="calendar-day day-disabled">1</span>
+                                    <span class="calendar-day day-disabled">2</span>
+                                    <span class="calendar-day day-disabled">3</span>
+                                    <span class="calendar-day day-disabled">4</span>
+                                    <span class="calendar-day day-disabled">5</span>
+                                    <span class="calendar-day day-disabled">6</span>
+                                    
+                                    <span class="calendar-day day-disabled">7</span>
+                                    <span class="calendar-day day-disabled">8</span>
+                                    <span class="calendar-day day-disabled">9</span>
+                                    <span class="calendar-day day-disabled">10</span>
+                                    <span class="calendar-day day-disabled">11</span>
+                                    <span class="calendar-day day-disabled">12</span>
+                                    <span class="calendar-day day-disabled">13</span>
+
+                                    <span class="calendar-day day-disabled">14</span>
+                                    <span class="calendar-day day-disabled">15</span>
+                                    <span class="calendar-day day-disabled">16</span>
+                                    <span class="calendar-day day-disabled">17</span>
+                                    <span class="calendar-day day-disabled">18</span>
+                                    <span class="calendar-day day-disabled">19</span>
+                                    <span class="calendar-day day-disabled">20</span>
+
+                                    <span class="calendar-day day-disabled">21</span>
+                                    <span class="calendar-day">22</span>
+                                    <span class="calendar-day">23</span>
+                                    <span class="calendar-day">24</span>
+                                    <span class="calendar-day">25</span>
+                                    <span class="calendar-day">26</span>
+                                    <span class="calendar-day day-disabled">27</span>
+
+                                    <span class="calendar-day day-disabled">28</span>
+                                    <span class="calendar-day">29</span>
+                                    <span class="calendar-day">30</span>
+                                </div>
+                            </div>
+
+                            <!-- Mock Time slots -->
+                            <div>
+                                <h4 style="font-family: var(--font-sans); font-weight: 700; color: var(--primary); margin-bottom: 1rem;">Available Times</h4>
+                                <div class="time-slots-container">
+                                    <div class="time-slot">09:00 AM EST</div>
+                                    <div class="time-slot">11:30 AM EST</div>
+                                    <div class="time-slot">02:00 PM EST</div>
+                                    <div class="time-slot">04:30 PM EST</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Contact info & Submit -->
+                    <div class="wizard-step">
+                        <h2 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--accent);">Step 4: Contact Details</h2>
+                        <p style="margin-bottom: 2rem;">Provide your coordinates to lock in this calendar booking reservation.</p>
+                        
+                        <div class="form-group">
+                            <label for="client-name">Your Full Name</label>
+                            <input type="text" id="client-name" class="form-control" placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-email">Email Address</label>
+                            <input type="email" id="client-email" class="form-control" placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-phone">Phone Number</label>
+                            <input type="tel" id="client-phone" class="form-control" placeholder="(555) 000-0000">
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Success state presentation -->
+                    <div class="wizard-step">
+                        <div class="wizard-success-state">
+                            <div class="success-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9.86 18a1 1 0 0 1-.73-.32l-4.86-5.17a1.002 1.002 0 0 1 1.46-1.37l4.1 4.36 7.9-8.77a1 1 0 0 1 1.48 1.34l-8.62 9.57a1 1 0 0 1-.73.36z"/></svg>
+                            </div>
+                            <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--accent); margin-bottom: 1rem;">Advisory Session Confirmed!</h2>
+                            <p style="max-width: 550px; margin-inline: auto; margin-bottom: 2rem;">Your strategy call appointment has been logged. An advisor will contact you at your chosen scheduled date/time slot. A calendar invitation has been sent to your email.</p>
+                            <div style="display:flex; justify-content:center; gap:1rem;">
+                                <a href="index.html" class="btn btn-primary">Return Home</a>
+                                <a href="resources.html" class="btn btn-secondary">Access checklists</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="wizard-footer">
+                    <button class="btn btn-secondary btn-prev">Back</button>
+                    <button class="btn btn-primary btn-next">Continue</button>
+                </div>
+            </div>
+
+            <!-- NEW SECTION 2: Document Submission Checklist -->
+            <div class="doc-checklist animated">
+                <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--primary);">Document Preparation Guidance</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">For corporate, trust, or high-volume strategy calls, preparing these documents beforehand accelerates setup:</p>
+                
+                <div class="doc-grid">
+                    <div class="doc-card">
+                        <h4>Completed IRS W-9</h4>
+                        <p style="color:var(--text-muted); margin-bottom:0;">Counties require valid Taxpayer Identification numbers (TIN) to process your interest distributions on redemption.</p>
+                    </div>
+
+                    <div class="doc-card">
+                        <h4>Entity Organization Document</h4>
+                        <p style="color:var(--text-muted); margin-bottom:0;">If bidding via a corporate LLC or holding trust, have your Good Standing certificates ready for county portal mapping.</p>
+                    </div>
+
+                    <div class="doc-card">
+                        <h4>Bank Wire/Funds Verification</h4>
+                        <p style="color:var(--text-muted); margin-bottom:0;">Bidding deposits require cleared bank wires. Prepare wire coordinates matching your registered bidder profile.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="color:#ffffff; margin-bottom: 1.5rem;">
+                    <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.2c2.4 2.1 4.7 4.2 7 6.3v6.5h-2v-6h-6v6H7v-6.5c2.3-2.1 4.6-4.2 7-6.3z"/></svg>
+                    <span>TaxLien</span>Advisors
+                </a>
+                <p>Providing institutional-grade research, bidding software mechanics, and custom investment blueprints for tax certificates and tax deeds nationwide.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home2.html">Home 2</a></li>
+                    <li><a href="services.html">Consulting Services</a></li>
+                    <li><a href="guides.html">Investment Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Legal & Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="resources.html">Due Diligence Checklist</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Support</a></li>
+                    <li><a href="booking.html">Book Strategy Call</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Market Updates</h3>
+                <p>Subscribe to receive listing notices of upcoming county tax deed auctions and lien calendars.</p>
+                <div class="footer-newsletter">
+                    <input type="email" placeholder="Enter your email" aria-label="Newsletter email">
+                    <button type="button" aria-label="Subscribe">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 TaxLienAdvisors LLC. All Rights Reserved. Financial consulting services are subject to market risks.</p>
+            <p>Designed with vanilla standards. Fully Accessible (A11y).</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/main.js" defer></script>
+</body>
+</html>

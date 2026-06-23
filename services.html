@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulting Services | Portfolio Advisory | TaxLienAdvisors</title>
+    <meta name="description" content="Explore our professional consulting services, including beginner coaching, tax lien due diligence support, bidding strategies, and institutional portfolios.">
+    <meta name="keywords" content="tax lien coaching, property title search, auction strategy, real estate mentorship">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css?v=1.1">
+    
+    <!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <style>
+        /* Services Specific styles */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+        .modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .modal-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            max-width: 600px;
+            width: 90%;
+            padding: 3rem;
+            position: relative;
+            transform: translateY(30px);
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
+        }
+        .modal.active .modal-card {
+            transform: translateY(0);
+        }
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            inset-inline-end: 1.5rem;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+        }
+        .modal-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .modal-body {
+            margin-bottom: 2rem;
+        }
+        .modal-list {
+            list-style: none;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .modal-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+        .modal-list svg {
+            fill: var(--accent);
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+        
+        /* Roadmap CSS */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+        .roadmap-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+        .roadmap-card::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent);
+            color: #0a192f;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Pricing Section */
+        .pricing-table-container {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border);
+            background-color: var(--bg-surface);
+            margin-top: 2rem;
+        }
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: start;
+        }
+        .pricing-table th {
+            background-color: #0a192f;
+            color: #ffffff;
+            padding: 1.25rem 1.5rem;
+            font-weight: 600;
+        }
+        [data-theme="dark"] .pricing-table th {
+            background-color: #101f42;
+        }
+        .pricing-table td {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.2c2.4 2.1 4.7 4.2 7 6.3v6.5h-2v-6h-6v6H7v-6.5c2.3-2.1 4.6-4.2 7-6.3z"/></svg>
+                <span>TaxLien</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <a href="services.html" class="nav-link active">Consulting Services</a>
+                <a href="guides.html" class="nav-link">Investment Guides</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-controls">
+                <button class="btn-icon theme-toggle" aria-label="Toggle Theme">
+                    <svg class="theme-icon-dark" viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18zm0-2a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM12 6a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V7a1 1 0 0 1 1-1zm0 10a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zm-7-5a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1zm10 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zm-6.36-4.64a1 1 0 0 1 1.41 0l.7.7a1 1 0 1 1-1.41 1.41l-.7-.7a1 1 0 0 1 0-1.41zm7.07 7.07a1 1 0 0 1 1.41 0l.7.7a1 1 0 1 1-1.41 1.41l-.7-.7a1 1 0 0 1 0-1.41zm-7.07 0a1 1 0 0 1 0-1.41l.7-.7a1 1 0 1 1 1.41 1.41l-.7.7a1 1 0 0 1-1.41 0zm7.07-7.07a1 1 0 0 1 0-1.41l.7-.7a1 1 0 1 1 1.41 1.41l-.7.7a1 1 0 0 1-1.41 0z"/></svg>
+                    <svg class="theme-icon-light" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 9.01 9.01 0 0 0-9-9zm0 16a7 7 0 1 1 7-7 7.008 7.008 0 0 1-7 7z"/></svg>
+                </button>
+                <button class="btn-icon rtl-toggle" aria-label="Toggle Direction">
+                    <span style="font-weight: 700; font-size: 0.85rem;">A↔أ</span>
+                </button>
+                <a href="booking.html" class="btn btn-primary">Book Consultation</a>
+                <button class="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav">
+        <ul class="mobile-menu">
+            <li><a href="index.html" class="mobile-link">Home</a></li>
+            <li><a href="home2.html" class="mobile-link">Home 2</a></li>
+            <li><a href="services.html" class="mobile-link active">Consulting Services</a></li>
+            <li><a href="guides.html" class="mobile-link">Investment Guides</a></li>
+            <li><a href="resources.html" class="mobile-link">Resources</a></li>
+            <li><a href="about.html" class="mobile-link">About Us</a></li>
+            <li><a href="contact.html" class="mobile-link">Contact</a></li>
+        </ul>
+        <a href="booking.html" class="btn btn-cta">Book a Consultation</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Header banner -->
+        <section class="section-bg" style="padding-block: 4rem;">
+            <div class="container text-center">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <span class="section-tag">Professional Suite</span>
+                    <h1 class="section-title">Strategic Consulting Offerings</h1>
+                    <p>We provide comprehensive advisory, due diligence algorithms, and operational support to scale your tax certificate and auction portfolio safely.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION 1: Client Onboarding Roadmap Timeline -->
+        <section class="container">
+            <div class="section-header animated">
+                <span class="section-tag">Methodology</span>
+                <h2 class="section-title">Your Onboarding Roadmap</h2>
+                <p style="margin-bottom: 0;">How we guide you from setting budgets to managing foreclosure deed transfers.</p>
+            </div>
+            
+            <div class="roadmap-grid">
+                <div class="roadmap-card animated" data-step="1">
+                    <h4 style="font-family: var(--font-serif); margin-bottom: 0.5rem; color: var(--accent);">Strategy Setup</h4>
+                    <p style="font-size: 0.8rem; margin-bottom: 0; color: var(--text-muted);">Formulate target yield states, investment capital parameters, and risk preferences.</p>
+                </div>
+
+                <div class="roadmap-card animated" data-step="2">
+                    <h4 style="font-family: var(--font-serif); margin-bottom: 0.5rem; color: var(--accent);">Access Profiles</h4>
+                    <p style="font-size: 0.8rem; margin-bottom: 0; color: var(--text-muted);">Configure county registration profiles, secure auction credentials, and execute wire deposits.</p>
+                </div>
+
+                <div class="roadmap-card animated" data-step="3">
+                    <h4 style="font-family: var(--font-serif); margin-bottom: 0.5rem; color: var(--accent);">List Auditing</h4>
+                    <p style="font-size: 0.8rem; margin-bottom: 0; color: var(--text-muted);">Perform environmental screening, title reviews, and GIS mapping on list files.</p>
+                </div>
+
+                <div class="roadmap-card animated" data-step="4">
+                    <h4 style="font-family: var(--font-serif); margin-bottom: 0.5rem; color: var(--accent);">Lien Bidding</h4>
+                    <p style="font-size: 0.8rem; margin-bottom: 0; color: var(--text-muted);">Execute auction strategies, configure proxy limits, and bid down interest rates.</p>
+                </div>
+
+                <div class="roadmap-card animated" data-step="5">
+                    <h4 style="font-family: var(--font-serif); margin-bottom: 0.5rem; color: var(--accent);">Exit Operations</h4>
+                    <p style="font-size: 0.8rem; margin-bottom: 0; color: var(--text-muted);">Manage statutory county redemptions or initiate deed foreclosures via legal pathways.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="section-bg">
+            <div class="container">
+                <div class="card-grid">
+                    
+                    <div class="card animated">
+                        <img src="images/service_beginner.png" alt="Beginner Investor Coaching" class="card-img">
+                        <h3 class="card-title">Beginner Investor Coaching</h3>
+                        <p>Orient your strategy. Establish county portal profiles, understand basic statutory interest grids, and execute minor trial investments without risk.</p>
+                        <button class="btn btn-secondary btn-learn" data-service="beginner" style="margin-top: 1rem; width: 100%;">Explore Service Scope</button>
+                    </div>
+
+                    <div class="card animated">
+                        <img src="images/service_tax_lien.png" alt="Tax Lien Consulting" class="card-img">
+                        <h3 class="card-title">Tax Lien Consulting</h3>
+                        <p>Maximize annual yields. Select high-interest certificates, monitor redemption terms, and structure regular yields in priority positions.</p>
+                        <button class="btn btn-secondary btn-learn" data-service="tax-lien" style="margin-top: 1rem; width: 100%;">Explore Service Scope</button>
+                    </div>
+
+                    <div class="card animated">
+                        <img src="images/service_auction_strategy.png" alt="Property Auction Strategy" class="card-img">
+                        <h3 class="card-title">Property Auction Strategy</h3>
+                        <p>Master competitive bidding. Configure premium limits, evaluate bid-down interest thresholds, and manage multi-platform software auctions.</p>
+                        <button class="btn btn-secondary btn-learn" data-service="auction" style="margin-top: 1rem; width: 100%;">Explore Service Scope</button>
+                    </div>
+
+                    <div class="card animated">
+                        <img src="images/service_due_diligence.png" alt="Due Diligence Support" class="card-img">
+                        <h3 class="card-title">Due Diligence Support</h3>
+                        <p>Perform complete site audits. Inspect title trails, GIS mappings, pre-existing federal tax liens, zoning issues, and structural codes.</p>
+                        <button class="btn btn-secondary btn-learn" data-service="due-diligence" style="margin-top: 1rem; width: 100%;">Explore Service Scope</button>
+                    </div>
+
+                    <div class="card animated">
+                        <img src="images/service_portfolio_building.png" alt="Portfolio Building" class="card-img">
+                        <h3 class="card-title">Portfolio Building</h3>
+                        <p>Diversify nationwide. Coordinate cross-state selections, establish legal holding trusts, and direct automated reinvestment schedules.</p>
+                        <button class="btn btn-secondary btn-learn" data-service="portfolio" style="margin-top: 1rem; width: 100%;">Explore Service Scope</button>
+                    </div>
+
+                    <div class="card animated">
+                        <img src="images/service_mentorship.png" alt="One-on-One Mentorship" class="card-img">
+                        <h3 class="card-title">One-on-One Mentorship</h3>
+                        <p>Retain structured corporate access. Benefit from direct monthly consultations, priority bidding catalogs, and custom exit-strategies.</p>
+                        <button class="btn btn-secondary btn-learn" data-service="mentorship" style="margin-top: 1rem; width: 100%;">Explore Service Scope</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION 2: Pricing Packages comparison -->
+        <section class="container">
+            <div class="section-header animated">
+                <span class="section-tag">Pricing Plans</span>
+                <h2 class="section-title">Transparent Advisory Packages</h2>
+                <p style="margin-bottom: 0;">Select the level of diligence and advisory support matching your capital budget.</p>
+            </div>
+            
+            <div class="pricing-table-container">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Plan Level</th>
+                            <th>Cost</th>
+                            <th>Inclusions</th>
+                            <th>Target Investor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight:700; color: var(--primary);">Beginner Coaching</td>
+                            <td style="font-weight:700; color: var(--accent);">$450 <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">flat fee</span></td>
+                            <td>Three 1-on-1 calls, bidding portal configuration guide, deposit worksheets, basic statutory checklist.</td>
+                            <td>Individual novices beginning under $10,000 budget.</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:700; color: var(--primary);">Campaign Diligence</td>
+                            <td style="font-weight:700; color: var(--accent);">$1,850 <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">/ auction list</span></td>
+                            <td>Full spatial, IRS, title audit report on up to 20 target properties. Verification of physical street access.</td>
+                            <td>Active investors bid planning $10k - $250k.</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:700; color: var(--primary);">Portfolio Retainer</td>
+                            <td style="font-weight:700; color: var(--accent);">$12,000 <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);">/ year</span></td>
+                            <td>Direct, unlimited consulting access to Marcus Vance. Weekly curated bid catalogs, Quiet Title legal integration.</td>
+                            <td>Institutions, Trusts, or Family Offices scaling $250k+.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Dynamic Service Modals -->
+        <div class="modal" id="service-modal">
+            <div class="modal-card">
+                <button class="modal-close" id="modal-close-btn">&times;</button>
+                <div class="modal-title" id="modal-title">Service Details</div>
+                <div class="modal-body" id="modal-content">
+                    Loading service description...
+                </div>
+                <div style="display:flex; justify-content: flex-end; gap: 1rem;">
+                    <button class="btn btn-secondary" id="modal-back-btn">Close</button>
+                    <a href="booking.html" class="btn btn-primary">Book consultation</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="color:#ffffff; margin-bottom: 1.5rem;">
+                    <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.2c2.4 2.1 4.7 4.2 7 6.3v6.5h-2v-6h-6v6H7v-6.5c2.3-2.1 4.6-4.2 7-6.3z"/></svg>
+                    <span>TaxLien</span>Advisors
+                </a>
+                <p>Providing institutional-grade research, bidding software mechanics, and custom investment blueprints for tax certificates and tax deeds nationwide.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home2.html">Home 2</a></li>
+                    <li><a href="services.html">Consulting Services</a></li>
+                    <li><a href="guides.html">Investment Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Legal & Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="resources.html">Due Diligence Checklist</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Support</a></li>
+                    <li><a href="booking.html">Book Strategy Call</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Market Updates</h3>
+                <p>Subscribe to receive listing notices of upcoming county tax deed auctions and lien calendars.</p>
+                <div class="footer-newsletter">
+                    <input type="email" placeholder="Enter your email" aria-label="Newsletter email">
+                    <button type="button" aria-label="Subscribe">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 TaxLienAdvisors LLC. All Rights Reserved. Financial consulting services are subject to market risks.</p>
+            <p>Designed with vanilla standards. Fully Accessible (A11y).</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/main.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Modals dataset
+            const serviceDetails = {
+                'beginner': {
+                    title: 'Beginner Investor Coaching',
+                    body: '<p>Ideal for individuals seeking to enter the tax lien space with low initial capital. Our coach walks you through terminology, local statutes, and setting up county bidding portal structures.</p><ul class="modal-list"><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Three 1-on-1 coaching sessions</li><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Step-by-step auction profile setup</li><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Small capital portfolio allocation models</li></ul>'
+                },
+                'tax-lien': {
+                    title: 'Tax Lien Certificate Consulting',
+                    body: '<p>Advanced strategies to identify and buy tax lien certificates that generate consistent yields (up to 18%-36% statutory interest rates). We help evaluate counties, redemption periods, and bidding interest thresholds.</p><ul class="modal-list"><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Interest calculation metrics spreadsheet</li><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Redemption tracking systems</li><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Priority lien certificate lists</li></ul>'
+                },
+                'auction': {
+                    title: 'Property Auction Strategy',
+                    body: '<p>Prepare to bid on both tax liens and tax deeds. We show you how online platform systems (e.g., Realauction, GovEase, Bid4Assets) manage queues, bid increments, deposits, and proxy rules.</p><ul class="modal-list"><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Proxy bid simulator rules training</li><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Deposit and wire transfer coordination</li><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Overbid prevention guardrails</li></ul>'
+                },
+                'due-diligence': {
+                    title: 'Due Diligence Support',
+                    body: '<p>A multi-factor audit on prospective properties. We analyze GIS maps, survey easements, evaluate prior tax schedules, check for IRS tax claims, check municipal code structures, and environmental liabilities.</p><ul class="modal-list"><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>GIS spatial and physical access audits</li><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Quiet Title Action feasibility checks</li><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Comprehensive custom PDF reports on target assets</li></ul>'
+                },
+                'portfolio': {
+                    title: 'Portfolio Building & Scaling',
+                    body: '<p>Build a secure, diversified, cash-flowing portfolio across multiple state jurisdictions. Setup holding corporations or trusts to manage lien assignments and quiet title foreclosures.</p><ul class="modal-list"><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Multi-state yield maps</li><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Legal LLC holding configurations advice</li><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Automated redemption rollover pathways</li></ul>'
+                },
+                'mentorship': {
+                    title: 'One-on-One Corporate Mentorship',
+                    body: '<p>Our premier retainer program. Gain priority, unlimited access to senior auction consultants, weekly asset lists filtered for high redemption probability, and custom tax legal exits.</p><ul class="modal-list"><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Weekly direct phone and Zoom priority</li><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>On-call due diligence evaluations (up to 30 properties/mo)</li><li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Lien foreclosure legal integration</li></ul>'
+                }
+            };
+
+            const modal = document.getElementById('service-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalContent = document.getElementById('modal-content');
+            const closeBtn = document.getElementById('modal-close-btn');
+            const backBtn = document.getElementById('modal-back-btn');
+            const learnBtns = document.querySelectorAll('.btn-learn');
+
+            const openModal = (serviceKey) => {
+                const details = serviceDetails[serviceKey];
+                if (details) {
+                    modalTitle.textContent = details.title;
+                    modalContent.innerHTML = details.body;
+                    modal.classList.add('active');
+                }
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('active');
+            };
+
+            learnBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const service = btn.getAttribute('data-service');
+                    openModal(service);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            backBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
