@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 letterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 
-                const letter = btn.getAttribute('data-letter');
+                const letter = btn.getAttribute('data-letter').toUpperCase();
                 const glossaryCards = document.querySelectorAll('.glossary-card');
                 
                 glossaryCards.forEach(card => {
