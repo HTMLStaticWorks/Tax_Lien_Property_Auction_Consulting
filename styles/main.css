@@ -240,7 +240,7 @@ header.scrolled {
     display: block;
 }
 
-body:not([data-theme="dark"]) .theme-icon-dark {
+html:not([data-theme="dark"]) .theme-icon-dark {
     display: block;
 }
 
@@ -450,6 +450,10 @@ section {
     color: #ffffff;
 }
 
+[data-theme="dark"] .hero-card-desc {
+    color: rgba(255, 255, 255, 0.75);
+}
+
 .hero-grid {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -554,6 +558,10 @@ section {
     margin-bottom: 1rem;
 }
 
+.hero-card-desc {
+    color: var(--text-muted);
+}
+
 .hero-card-list {
     list-style: none;
     display: flex;
@@ -591,6 +599,12 @@ section {
     box-shadow: var(--shadow-sm);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .btn-learn {
+    margin-top: auto !important;
 }
 
 .card::after {
@@ -636,7 +650,9 @@ section {
 
 .card-img {
     width: 100%;
-    height: 180px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 200px;
     object-fit: cover;
     border-radius: var(--border-radius);
     margin-bottom: 1.5rem;
@@ -1698,10 +1714,22 @@ footer {
     .hamburger {
         display: flex;
     }
+    header .nav-controls .theme-toggle,
+    header .nav-controls .rtl-toggle,
+    header .nav-controls .btn-primary {
+        display: none;
+    }
     .hero-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 3rem;
         text-align: center;
+    }
+    .hero-content {
+        order: 1;
+    }
+    .hero-visual {
+        order: 2;
     }
     .hero-content h1 {
         font-size: 2.75rem;
@@ -1711,9 +1739,8 @@ footer {
     }
     .hero-stats {
         justify-content: center;
-    }
-    .hero-visual {
-        order: -1;
+        flex-wrap: wrap;
+        gap: 2rem;
     }
     .two-col-layout {
         grid-template-columns: 1fr;
@@ -1735,6 +1762,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .hero-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1757,4 +1789,205 @@ footer {
     .video-hero-content h1 {
         font-size: 2.5rem;
     }
+    .story-body {
+        padding: 1.5rem;
+    }
+    .story-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    .metric-box {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .story-metrics {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--bg-surface);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--accent);
+    color: #0a192f;
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-3px);
+}
+
+.back-to-top svg {
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover svg {
+    transform: translateY(-2px);
+}
+
+/* RTL positioning */
+[dir="rtl"] .back-to-top {
+    right: auto;
+    left: 2rem;
+}
+
+/* Footer Social Icons */
+.footer-socials {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.75);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #0a192f;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-gold);
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover svg {
+    transform: scale(1.1);
+}
+
+/* RTL spacing for socials */
+[dir="rtl"] .footer-socials {
+    gap: 0.75rem;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-quote {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+}
+
+.testimonial-meta h4 {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    color: var(--text);
+    margin-bottom: 0.15rem;
+}
+
+.testimonial-subtitle {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* RTL layout for testimonials */
+[dir="rtl"] .testimonial-author {
+    flex-direction: row;
+}
+
+/* Contact Page Coordinates Card Socials styling */
+.info-card .social-icon {
+    background-color: rgba(10, 25, 47, 0.05);
+    border: 1px solid rgba(10, 25, 47, 0.1);
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .info-card .social-icon {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.info-card .social-icon:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #0a192f !important;
+}
+
+/* Mobile Nav Controls inside drawer */
+.mobile-nav-controls {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-top: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.mobile-nav-controls .btn-icon {
+    border-color: var(--border);
+    background-color: transparent;
+    color: var(--text);
+}
+
+.mobile-nav-controls .btn-icon:hover {
+    border-color: var(--accent);
+    color: var(--accent);
 }
