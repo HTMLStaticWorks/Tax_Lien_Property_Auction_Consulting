@@ -836,7 +836,8 @@ section {
 }
 
 .video-hero-content p {
-    color: var(--text-muted);
+    color: var(--text);
+    font-weight: 500;
 }
 
 [data-theme="dark"] .video-hero {
@@ -1759,6 +1760,11 @@ footer {
     .two-col-layout .col-text {
         text-align: center;
     }
+    .process-list li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 2.5rem;
@@ -2112,15 +2118,11 @@ footer {
 
 .workflow-num {
     font-size: 3.5rem;
-    color: rgba(184, 153, 102, 0.15);
+    color: var(--accent);
     font-weight: 700;
     line-height: 1;
     margin-bottom: 1.5rem;
     font-family: var(--font-serif);
-}
-
-[data-theme="dark"] .workflow-num {
-    color: rgba(184, 153, 102, 0.25);
 }
 
 .workflow-title {
@@ -2158,7 +2160,7 @@ footer {
     height: 70px;
     border-radius: 50%;
     background-color: var(--accent);
-    color: var(--primary);
+    color: #1A2942;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2174,12 +2176,13 @@ footer {
 }
 
 .onboarding-step h4 {
-    color: #ffffff;
+    color: var(--text-inverse);
     font-size: 1.35rem;
     margin-bottom: 0.75rem;
 }
 
 .onboarding-step p {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-inverse);
+    opacity: 0.8;
     font-size: 0.95rem;
 }
