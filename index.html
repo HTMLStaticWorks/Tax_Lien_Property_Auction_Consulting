@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Lien & Property auction Consulting | TaxLienAdvisors</title>
+    <meta name="description" content="Secure your financial future with professional tax lien certificates and property auction consulting. Benefit from due diligence systems and expert portfolios.">
+    <meta name="keywords" content="tax lien certificates, property auction, real estate consulting, tax deeds, due diligence checklist">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="Tax Lien & Property auction Consulting | TaxLienAdvisors">
+    <meta property="og:description" content="Secure your financial future with professional tax lien certificates and property auction consulting.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taxlienadvisors.com/">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css?v=1.2">
+    
+    <!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <style>
+        /* Specific page additions */
+        .matcher-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .matcher-card {
+            border: 2px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            background-color: var(--bg-surface);
+            text-align: center;
+        }
+        .matcher-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        .matcher-card.selected {
+            border-color: var(--accent);
+            background-color: rgba(184, 153, 102, 0.05);
+            box-shadow: var(--shadow-sm);
+        }
+        .matcher-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .matcher-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+        .matcher-result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            border-inline-start: 4px solid var(--accent);
+            text-align: center;
+            font-size: 1.05rem;
+        }
+        
+        @media (max-width: 768px) {
+            .matcher-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .matcher-card {
+                padding: 1.50rem;
+            }
+            .matcher-card img {
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+        }
+        
+        /* Table styling */
+        .rate-table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border);
+            background-color: var(--bg-surface);
+        }
+        .rate-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: start;
+        }
+        .rate-table th {
+            background-color: #1A2942;
+            color: #ffffff;
+            padding: 1.25rem 1.5rem;
+            font-family: var(--font-sans);
+            font-weight: 600;
+        }
+        [data-theme="dark"] .rate-table th {
+            background-color: #101f42;
+        }
+        .rate-table td {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+        .rate-table tr:last-child td {
+            border-bottom: none;
+        }
+        .rate-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+        .badge-gold {
+            background-color: rgba(184, 153, 102, 0.15);
+            color: var(--accent);
+        }
+        .badge-navy {
+            background-color: rgba(26, 41, 66, 0.1);
+            color: #1A2942;
+        }
+        [data-theme="dark"] .badge-navy {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+    </style>
+
+    <!-- Schema.org JSON-LD Structure -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      "name": "TaxLienAdvisors Consulting",
+      "description": "Professional advisory services specializing in tax lien certificate investing, property auctions, and thorough real estate due diligence.",
+      "url": "https://taxlienadvisors.com/",
+      "telephone": "+1-800-555-0199",
+      "address": {
+        "@type": "Postaladdress",
+        "streetaddress": "100 Financial Plaza, Suite 500",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10005",
+        "addressCountry": "US"
+      },
+      "priceRange": "$$$"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.2c2.4 2.1 4.7 4.2 7 6.3v6.5h-2v-6h-6v6H7v-6.5c2.3-2.1 4.6-4.2 7-6.3z"/></svg>
+                <span>TaxLien</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <a href="services.html" class="nav-link">Consulting Services</a>
+                <a href="guides.html" class="nav-link">Investment Guides</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="about.html" class="nav-link">about Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-controls">
+                <button class="btn-icon theme-toggle" aria-label="Toggle Theme">
+                    <svg class="theme-icon-light" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm-1.06-10.96c.39-.39.39-1.03 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.01c.39-.39.39-1.03 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+                    </svg>
+                    <svg class="theme-icon-dark" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 0 1-4.4 2.26 5.4 5.4 0 0 1-5.4-5.4c0-1.8 1-3.39 2.45-4.2A9 9 0 0 0 12 3z"/>
+                    </svg>
+                </button>
+                <button class="btn-icon rtl-toggle" aria-label="Toggle Direction">
+                    <span style="font-weight: 700; font-size: 0.75rem; letter-spacing: 0.5px;">RTL</span>
+                </button>
+                <a href="booking.html" class="btn btn-primary">Book Consultation</a>
+                <button class="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav">
+        <ul class="mobile-menu">
+            <li><a href="index.html" class="mobile-link active">Home</a></li>
+            <li><a href="home2.html" class="mobile-link">Home 2</a></li>
+            <li><a href="services.html" class="mobile-link">Consulting Services</a></li>
+            <li><a href="guides.html" class="mobile-link">Investment Guides</a></li>
+            <li><a href="resources.html" class="mobile-link">Resources</a></li>
+            <li><a href="about.html" class="mobile-link">about Us</a></li>
+            <li><a href="contact.html" class="mobile-link">Contact</a></li>
+        </ul>
+        <a href="booking.html" class="btn btn-cta">Book a Consultation</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1>Expert <span>Property Auction & Tax Lien Consulting</span></h1>
+                    <p>Navigate the complexities of property auctions and tax lien investments with confidence. Our professional consulting services provide the strategic guidance, rigorous due diligence, and bidding expertise you need to build a secure, high-yielding real estate portfolio.</p>
+                    <div class="hero-buttons">
+                        <a href="booking.html" class="btn btn-primary">Schedule a Consultation</a>
+                        <a href="guides.html" class="btn btn-secondary">Explore Investment Guides</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>16.4%</h3>
+                            <p>average Client Yield</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>$45M+</h3>
+                            <p>auction Capital Placed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>0%</h3>
+                            <p>Principal Capital Lost</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <span class="card-tag">Latest Opportunity</span>
+                        <h3>Upcoming Tax auction</h3>
+                        <p class="hero-card-desc" style="font-size: 0.9rem; margin-bottom: 1.5rem;">Maricopa County, AZ online auction opens in 14 days. 12,000+ certificates available with opening bids under $1,500.</p>
+                        <ul class="hero-card-list">
+                            <li>
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                Guaranteed Interest: Up to 16% per annum
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                First-priority Lien position over mortgages
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                Direct route to property acquisition
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. The Property Auction Process -->
+        <section class="container two-col-layout animated" id="auction-process">
+            <div class="col-text">
+                <span class="section-tag">The Auction Process</span>
+                <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">How Property Auctions Work</h2>
+                <p>When properties fall delinquent on their taxes, municipalities issue tax lien certificates or deeds sold via public property auctions. Navigating these auctions can be incredibly lucrative, but it requires precision and expertise.</p>
+                <ul class="process-list">
+                    <li>
+                        <div class="step-number">1</div>
+                        <div>
+                            <strong>Delinquency</strong>
+                            <span>Property owners fail to pay taxes, and the county issues a lien.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">2</div>
+                        <div>
+                            <strong>Public Auction</strong>
+                            <span>Investors bid on these liens or deeds to pay the county's deficit.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">3</div>
+                        <div>
+                            <strong>Redemption or Foreclosure</strong>
+                            <span>Earn high statutory interest if redeemed, or acquire the property if they default.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-image" style="background:none; box-shadow:none; overflow:hidden;">
+                <img src="images/suburban_house.png" alt="Tax lien certificate property" style="width:100%; height:100%; object-fit:cover; border-radius:var(--border-radius);">
+            </div>
+        </section>
+
+        <!-- NEW SECTION 1: Interactive Goal Matcher -->
+        <section class="section-bg">
+            <div class="container">
+                <div class="section-header animated">
+                    <span class="section-tag">Strategy alignment</span>
+                    <h2 class="section-title">Lien or Deed: Which Fits You?</h2>
+                    <p style="margin-bottom: 0;">Click one of the primary pathways below to determine your default portfolio recommendation.</p>
+                </div>
+                
+                <div class="matcher-grid">
+                    <div class="matcher-card selected" data-pathway="liens">
+                        <img src="images/tax_lien_cert.png" alt="Tax Lien Certificates">
+                        <h3>Tax Lien Certificates</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Prioritize high, guaranteed statutory interest yields over direct property title ownership. Lower capital barriers.</p>
+                    </div>
+                    
+                    <div class="matcher-card" data-pathway="deeds">
+                        <img src="images/tax_deeds_foreclosure.png" alt="Tax Deeds / Foreclosure">
+                        <h3>Tax Deeds / Foreclosure</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Prioritize direct real estate acquisition. Target unoccupied properties at steep county discount rates.</p>
+                    </div>
+                </div>
+
+                <div class="matcher-result" id="matcher-recommendation">
+                    <strong>Recommendation:</strong> Based on your preference for passive yields, we recommend starting with <strong>Arizona or Florida</strong> tax lien certificate auctions. Capital requirement: $5,000+; target yields: 12-18%.
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Our Consulting Services -->
+        <section id="consulting-services">
+            <div class="container">
+                <div class="section-header animated">
+                    <span class="section-tag">Consulting Services</span>
+                    <h2 class="section-title">Comprehensive Portfolio Advisory</h2>
+                    <p>Success at a property auction requires more than just capital; it requires deep expertise. Our professional advisory shields you from common real estate traps and maximizes your auction success.</p>
+                </div>
+                <div class="card-grid">
+                    <div class="card animated">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9h2v9h-2z"/></svg>
+                        </div>
+                        <h3 class="card-title">Strategy & Planning</h3>
+                        <p>We work with you to establish budget parameters, identify optimal states/counties for your goals, and structure a bidding plan.</p>
+                    </div>
+                    <div class="card animated">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 9h-2V7h-2v5H6v-2h2V7c0-1.1.9-2 2-2h2v7zm4 0h-2V7h-2v5h-2v-2h2V7c0-1.1.9-2 2-2h2v7z"/></svg>
+                        </div>
+                        <h3 class="card-title">Auction Representation</h3>
+                        <p>We act as your proxy, managing county registrations and executing bids on your behalf using optimized algorithms.</p>
+                    </div>
+                    <div class="card animated">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        </div>
+                        <h3 class="card-title">Exit Management</h3>
+                        <p>Should a property fail to redeem, we manage quiet title actions, deed registrations, and liquidation strategies to maximize returns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Investment Guidance & Risk Mitigation -->
+        <section class="section-bg" id="investment-guidance">
+            <div class="container two-col-layout animated">
+                <div class="col-image" style="background:none; box-shadow:none; overflow:hidden; order: -1;">
+                    <img src="images/commercial_building.png" alt="Commercial property investment" style="width:100%; height:100%; object-fit:cover; border-radius:var(--border-radius);">
+                </div>
+                <div class="col-text">
+                    <span class="section-tag">Investment Guidance</span>
+                    <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Rigorous Risk Mitigation</h2>
+                    <p>Without proper guidance, tax auctions are filled with hidden landmines. We perform exhaustive due diligence on every target asset to protect your capital.</p>
+                    <ul class="check-list">
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <span>Screening for hidden IRS or municipal liens.</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <span>Environmental liability and zoning assessments.</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <span>Valuation analysis to prevent overbidding premiums.</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <span>Filtering out worthless or non-conforming parcels.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. The Bidding Workflow -->
+        <section class="container" id="bidding-workflow">
+            <div class="section-header animated">
+                <span class="section-tag">Bidding Workflow</span>
+                <h2 class="section-title">How We Secure Your Assets</h2>
+                <p>We utilize advanced bidding mechanics to ensure you win the right properties at the right price.</p>
+            </div>
+            
+            <div class="workflow-grid">
+                <div class="workflow-step">
+                    <div class="workflow-num">01</div>
+                    <h4 class="workflow-title">List Acquisition</h4>
+                    <p>We pull the county's delinquent tax list weeks before the auction opens.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-num">02</div>
+                    <h4 class="workflow-title">Algorithmic Filtering</h4>
+                    <p>We run the list against our proprietary criteria to isolate high-value targets.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-num">03</div>
+                    <h4 class="workflow-title">Proxy Bidding</h4>
+                    <p>We place strategic proxy bids, whether bidding down interest or bidding up premium.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-num">04</div>
+                    <h4 class="workflow-title">Award & Funding</h4>
+                    <p>Winning bids are recorded, and you fund the county directly to secure your certificate.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. How Clients Can Get Started -->
+        <section style="background-color: var(--primary); padding-block: 5rem; margin-top: 3rem;" id="get-started">
+            <div class="container animated" style="text-align: center;">
+                <span class="section-tag" style="color: var(--accent); margin-bottom: 1rem; display: block;">Get Started</span>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: #ffffff;">Begin Your Investment Journey Today</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 3rem; color: rgba(255, 255, 255, 0.8); max-width: 700px; margin-inline: auto;">Partnering with us is simple. Follow these three steps to start building your high-yield portfolio safely.</p>
+                
+                <div class="onboarding-grid">
+                    <div class="onboarding-step">
+                        <div class="onboarding-num">1</div>
+                        <h4>Book a Call</h4>
+                        <p>Schedule a free consultation to discuss your capital and goals.</p>
+                    </div>
+                    <div class="onboarding-step">
+                        <div class="onboarding-num">2</div>
+                        <h4>Design a Strategy</h4>
+                        <p>We map out the specific states and auction types that match your profile.</p>
+                    </div>
+                    <div class="onboarding-step">
+                        <div class="onboarding-num">3</div>
+                        <h4>Deploy Capital</h4>
+                        <p>We bid on your behalf. You secure the asset directly from the municipality.</p>
+                    </div>
+                </div>
+                
+                <a href="booking.html" class="btn btn-cta" style="padding: 1rem 2.5rem; font-size: 1.05rem;">Schedule Your Consulting Call</a>
+            </div>
+        </section>
+
+        <!-- NEW SECTION 2: State Statutory Rates Heatmap Reference Table -->
+        <section class="section-bg">
+            <div class="container">
+                <div class="section-header animated">
+                    <span class="section-tag">Rate Sheet</span>
+                    <h2 class="section-title">Top State Interest Rate Caps</h2>
+                    <p style="margin-bottom: 0;">Below is a summary of maximum statutory rates allowed by state legislations for tax lien purchases.</p>
+                </div>
+                
+                <div class="rate-table-container">
+                    <table class="rate-table">
+                        <thead>
+                            <tr>
+                                <th>State Name</th>
+                                <th>Max Statutory Yield Limit</th>
+                                <th>Lien / Deed System</th>
+                                <th>Bidding Mechanics</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight:600;">Illinois</td>
+                                <td><span class="rate-badge badge-gold">36% / Year</span></td>
+                                <td>Tax Lien</td>
+                                <td>Bid-Down Interest (18% penalty per semi-annual block)</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;">Iowa</td>
+                                <td><span class="rate-badge badge-gold">24% / Year</span></td>
+                                <td>Tax Lien</td>
+                                <td>Bid-Down Interest (2% per month flat)</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;">Florida</td>
+                                <td><span class="rate-badge badge-gold">18% / Year</span></td>
+                                <td>Tax Lien</td>
+                                <td>Bid-Down Interest (5% guaranteed minimum yield)</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;">Arizona</td>
+                                <td><span class="rate-badge badge-navy">16% / Year</span></td>
+                                <td>Tax Lien</td>
+                                <td>Bid-Down Interest (16% max allowed starting)</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;">Indiana</td>
+                                <td><span class="rate-badge badge-navy">10% - 15% flat</span></td>
+                                <td>Tax Lien</td>
+                                <td>Flat Rate Penalty (Increases with time elapsed)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories (Case Examples) -->
+        <section class="container">
+            <div class="section-header animated">
+                <span class="section-tag">Case Studies</span>
+                <h2 class="section-title">Verified Portfolio Triumphs</h2>
+                <p>Explore real case examples of structured tax lien purchases managed by our consultants.</p>
+            </div>
+            <div class="success-stories">
+                <div class="story-card animated">
+                    <div class="story-image-wrap" style="position:relative; aspect-ratio:16/10; overflow:hidden; background-color:#1A2942;">
+                        <img src="images/suburban_house.png" alt="Duval County Florida Residence" style="width:100%; height:100%; object-fit:cover;">
+                        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(26, 41, 66,0.9), transparent); display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; color:#ffffff;">
+                            <h4 style="font-family:var(--font-serif); color:#ffffff; font-size:1.1rem; margin-bottom:0.25rem;">Duval County, FL Residence</h4>
+                            <span style="font-size: 0.8rem; opacity: 0.8;">Redeemed Certificate #88432</span>
+                        </div>
+                    </div>
+                    <div class="story-body">
+                        <div>
+                            <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem;">18% Statutory Yield Secured</h3>
+                            <p>Our client purchased a delinquent tax certificate on an unoccupied residential lot. County appraiser valuation estimated land worth at $68,000. Homeowner redeemed tax obligations after 11 months, yielding maximum Florida statutory interest.</p>
+                        </div>
+                        <div class="story-metrics">
+                            <div class="metric-box">
+                                <h4>$3,450</h4>
+                                <span>Initial Purchase</span>
+                            </div>
+                            <div class="metric-box">
+                                <h4>11 Months</h4>
+                                <span>Redemption Period</span>
+                            </div>
+                            <div class="metric-box">
+                                <h4>$621</h4>
+                                <span>Net Interest Earned</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card animated">
+                    <div class="story-image-wrap" style="position:relative; aspect-ratio:16/10; overflow:hidden; background-color:#1A2942;">
+                        <img src="images/commercial_building.png" alt="Cochise County Arizona Commercial" style="width:100%; height:100%; object-fit:cover;">
+                        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(26, 41, 66,0.9), transparent); display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; color:#ffffff;">
+                            <h4 style="font-family:var(--font-serif); color:#ffffff; font-size:1.1rem; margin-bottom:0.25rem;">Cochise County, AZ Commercial</h4>
+                            <span style="font-size: 0.8rem; opacity: 0.8;">Foreclosed Deed #9048-a</span>
+                        </div>
+                    </div>
+                    <div class="story-body">
+                        <div>
+                            <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem;">acquisition Via Non-Redemption</h3>
+                            <p>an institutional investor client built a package of AZ liens. This retail property remained unredeemed. Our legal partners executed foreclosure, securing clear ownership title for a fraction of market value.</p>
+                        </div>
+                        <div class="story-metrics">
+                            <div class="metric-box">
+                                <h4>$12,800</h4>
+                                <span>Total Tax Costs</span>
+                            </div>
+                            <div class="metric-box">
+                                <h4>$145,000</h4>
+                                <span>appraised Value</span>
+                            </div>
+                            <div class="metric-box">
+                                <h4>91%</h4>
+                                <span>asset Discount</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTa Section -->
+        <section class="section-bg" style="text-align: center;">
+            <div class="container animated" style="max-width: 800px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Ready to Master Your Next Property Auction?</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">Work one-on-one with a veteran property auction and tax lien consultant. We help establish your strategy, analyze auction listings, perform deep due diligence, and guide you through the bidding process.</p>
+                <a href="booking.html" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.05rem;">Schedule Your Consulting Call</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="color:#ffffff; margin-bottom: 1.5rem;">
+                    <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.2c2.4 2.1 4.7 4.2 7 6.3v6.5h-2v-6h-6v6H7v-6.5c2.3-2.1 4.6-4.2 7-6.3z"/></svg>
+                    <span>TaxLien</span>
+                </a>
+                <p>Providing institutional-grade research, bidding software mechanics, and custom investment blueprints for tax certificates and tax deeds nationwide.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home2.html">Home 2</a></li>
+                    <li><a href="services.html">Consulting Services</a></li>
+                    <li><a href="guides.html">Investment Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Legal & Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="resources.html">Due Diligence Checklist</a></li>
+                    <li><a href="about.html">about Us</a></li>
+                    <li><a href="contact.html">Contact Support</a></li>
+                    <li><a href="booking.html">Book Strategy Call</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Market Updates</h3>
+                <p>Subscribe to receive listing notices of upcoming county tax deed auctions and lien calendars.</p>
+                <div class="footer-newsletter">
+                    <input type="email" placeholder="Enter your email" aria-label="Newsletter email">
+                    <button type="button" aria-label="Subscribe">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 TaxLienAdvisors LLC. all Rights Reserved. Financial consulting services are subject to market risks.</p>
+            <p>Designed with vanilla standards. Fully accessible (a11y).</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/main.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Goal Matcher script
+            const matcherCards = document.querySelectorall('.matcher-card');
+            const resultBox = document.getElementById('matcher-recommendation');
+            
+            matcherCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    matcherCards.forEach(c => c.classList.remove('selected'));
+                    card.classList.add('selected');
+                    
+                    const pathway = card.getattribute('data-pathway');
+                    if (pathway === 'liens') {
+                        resultBox.innerHTML = `<strong>Recommendation:</strong> Based on your preference for passive yields, we recommend starting with <strong>Arizona or Florida</strong> tax lien certificate auctions. Capital requirement: $5,000+; target yields: 12-18%.`;
+                    } else {
+                        resultBox.innerHTML = `<strong>Recommendation:</strong> Based on your preference for direct property ownership, we recommend exploring <strong>Texas, California, or Georgia</strong> tax deed sales. Capital requirement: $25,000+; asset discounts up to 80%.`;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Office & Inquiries | TaxLienAdvisors</title>
+    <meta name="description" content="Reach out to TaxLienAdvisors. Submit our consulting inquiry form, find office hours, phone numbers, and common scheduling FaQs.">
+    <meta name="keywords" content="tax lien contact, property auction phone number, real estate office, advisor email">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css?v=1.1">
+    
+    <!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <style>
+        /* Contact specific styling */
+        .contact-info-block {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .info-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+        .info-row svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        .info-row h4 {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .info-row p {
+            margin-bottom: 0;
+            color: var(--text);
+            font-weight: 600;
+        }
+        .map-placeholder {
+            background-color: var(--secondary);
+            aspect-ratio: 16/9;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            margin-top: 2rem;
+        }
+        .map-placeholder svg {
+            width: 60px;
+            height: 60px;
+            opacity: 0.3;
+        }
+        
+        /* New section styles */
+        .affiliations-row {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            opacity: 0.85;
+        }
+        .affiliation-badge {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-family: var(--font-serif);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .prep-checklist {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 3rem;
+        }
+        .prep-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .prep-item:last-child {
+            margin-bottom: 0;
+        }
+        .prep-num {
+            background-color: var(--accent);
+            color: #1A2942;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.2c2.4 2.1 4.7 4.2 7 6.3v6.5h-2v-6h-6v6H7v-6.5c2.3-2.1 4.6-4.2 7-6.3z"/></svg>
+                <span>TaxLien</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <a href="services.html" class="nav-link">Consulting Services</a>
+                <a href="guides.html" class="nav-link">Investment Guides</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="about.html" class="nav-link">about Us</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+
+            <div class="nav-controls">
+                <button class="btn-icon theme-toggle" aria-label="Toggle Theme">
+                    <svg class="theme-icon-light" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm-1.06-10.96c.39-.39.39-1.03 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.01c.39-.39.39-1.03 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+                    </svg>
+                    <svg class="theme-icon-dark" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 0 1-4.4 2.26 5.4 5.4 0 0 1-5.4-5.4c0-1.8 1-3.39 2.45-4.2A9 9 0 0 0 12 3z"/>
+                    </svg>
+                </button>
+                <button class="btn-icon rtl-toggle" aria-label="Toggle Direction">
+                    <span style="font-weight: 700; font-size: 0.75rem; letter-spacing: 0.5px;">RTL</span>
+                </button>
+                <a href="booking.html" class="btn btn-primary">Book Consultation</a>
+                <button class="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav">
+        <ul class="mobile-menu">
+            <li><a href="index.html" class="mobile-link">Home</a></li>
+            <li><a href="home2.html" class="mobile-link">Home 2</a></li>
+            <li><a href="services.html" class="mobile-link">Consulting Services</a></li>
+            <li><a href="guides.html" class="mobile-link">Investment Guides</a></li>
+            <li><a href="resources.html" class="mobile-link">Resources</a></li>
+            <li><a href="about.html" class="mobile-link">about Us</a></li>
+            <li><a href="contact.html" class="mobile-link active">Contact</a></li>
+        </ul>
+        <a href="booking.html" class="btn btn-cta">Book a Consultation</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Banner Header -->
+        <section class="section-bg" style="padding-block: 4rem;">
+            <div class="container text-center">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <span class="section-tag">Direct Lines</span>
+                    <h1 class="section-title">Get in Touch</h1>
+                    <p>Whether seeking standard schedules, portfolio scale consulting, or title reviews, we are here to support you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Columns -->
+        <section class="container two-col-layout animated" style="align-items: flex-start;">
+            
+            <!-- Left Info Column -->
+            <div class="contact-info-block">
+                <div class="info-card">
+                    <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">Office Coordinates</h3>
+                    
+                    <div class="info-row">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <div>
+                            <h4>Corporate Office</h4>
+                            <p>100 Financial Plaza, Suite 500<br>New York, NY 10005</p>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.149 15.149 0 0 0 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <div>
+                            <h4>Telephone</h4>
+                            <p>+1-800-555-0199</p>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <div>
+                            <h4>Email address</h4>
+                            <p>advisory@taxlienadvisors.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        <div>
+                            <h4>Consulting Hours</h4>
+                            <p>Mon - Fri: 8:00 AM - 6:00 PM EST</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                        <h4 style="font-family: var(--font-sans); font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;">Follow Us</h4>
+                        <div class="footer-socials" style="margin-top: 0;">
+                            <a href="#" aria-label="Facebook" class="social-icon">
+                                <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+                            </a>
+                            <a href="#" aria-label="Twitter" class="social-icon">
+                                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" class="social-icon">
+                                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href="#" aria-label="YouTube" class="social-icon">
+                                <svg viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.507 9.388.507 9.388.507s7.517 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office map mockup -->
+                <div class="map-placeholder" style="padding: 0; overflow: hidden; display: block; border: 1px solid var(--border);">
+                    <img src="images/office_map.png" alt="Corporate Office Map" style="width:100%; height:100%; object-fit:cover; border-radius:var(--border-radius); display: block;">
+                </div>
+            </div>
+
+            <!-- Right Form Column -->
+            <div class="info-card" style="width: 100%;">
+                <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">Submit an Inquiry</h3>
+                <form id="consultation-inquiry-form">
+                    <div class="form-group">
+                        <label for="contact-name">Full Name</label>
+                        <input type="text" id="contact-name" class="form-control" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email address</label>
+                        <input type="email" id="contact-email" class="form-control" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-phone">Phone Number</label>
+                        <input type="tel" id="contact-phone" class="form-control" placeholder="(555) 000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Consulting Needs Summary</label>
+                        <textarea id="contact-message" rows="5" class="form-control" placeholder="Describe your property investment goals, budget, or specific inquiries..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding-block: 1rem;">Send Inquiry Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- NEW SECTION 1: Professional affiliations Listings -->
+        <section class="container">
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; text-align: center; margin-bottom: 1.5rem; color: var(--primary);">Compliance & affiliations</h3>
+            <div class="affiliations-row">
+                <div class="affiliation-badge">
+                    <span>ðŸ›¡ï¸</span> NTLa Platinum Member
+                </div>
+                <div class="affiliation-badge">
+                    <span>ðŸ¢</span> National REIa Partner
+                </div>
+                <div class="affiliation-badge">
+                    <span>â­</span> BBB Rated a+
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION 2: Pre-Call Preparation Checklist -->
+        <section class="container">
+            <div class="prep-checklist">
+                <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary);">How to Prepare for Your advisory Call</h3>
+                <p style="font-size: 0.95rem; color:var(--text-muted); margin-bottom: 2rem;">Help us maximize your session value by gathering these details beforehand:</p>
+                
+                <div class="prep-item">
+                    <div class="prep-num">1</div>
+                    <div>
+                        <h4 style="font-family:var(--font-sans); font-size:1rem; font-weight:700; margin-bottom:0.25rem;">Define Your Maximum Capital allocation</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0;">Counties require up-front cash deposits (usually 10% of planned bids) before the auction opens.</p>
+                    </div>
+                </div>
+
+                <div class="prep-item">
+                    <div class="prep-num">2</div>
+                    <div>
+                        <h4 style="font-family:var(--font-sans); font-size:1rem; font-weight:700; margin-bottom:0.25rem;">Select Your Target State Jurisdictions</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0;">Decide if you prefer Arizona/Florida certificate states (passive yields) or Texas/California deed states (direct title).</p>
+                    </div>
+                </div>
+
+                <div class="prep-item">
+                    <div class="prep-num">3</div>
+                    <div>
+                        <h4 style="font-family:var(--font-sans); font-size:1rem; font-weight:700; margin-bottom:0.25rem;">Isolate Specific Parcels for Title audits</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0;">If you have active county parcel IDs, bring them to the session for a quick-run GIS appraiser test.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Mini FaQ -->
+        <section class="section-bg">
+            <div class="container">
+                <div class="section-header animated">
+                    <span class="section-tag">Form FaQ</span>
+                    <h2 class="section-title">Inquiry Support Q&a</h2>
+                </div>
+                <div class="faq-list">
+                    
+                    <div class="faq-item animated">
+                        <div class="faq-question">
+                            What are your standard consultation advisory rates?
+                            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We structure custom quotes depending on whether you require beginner 1-on-1 orientation coaching, target asset due diligence title checks, or annual portfolio retainer mentorship. Contact us with your scale budgets for pricing grids.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item animated">
+                        <div class="faq-question">
+                            Do you provide free lists of upcoming county tax auctions?
+                            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We supply general auction schedule calendars and regulatory guides in our Resources. Filtered, audited catalogs showing property assessments and risk parameters are exclusive to consulting and retainer clients.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="color:#ffffff; margin-bottom: 1.5rem;">
+                    <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.2c2.4 2.1 4.7 4.2 7 6.3v6.5h-2v-6h-6v6H7v-6.5c2.3-2.1 4.6-4.2 7-6.3z"/></svg>
+                    <span>TaxLien</span>
+                </a>
+                <p>Providing institutional-grade research, bidding software mechanics, and custom investment blueprints for tax certificates and tax deeds nationwide.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home2.html">Home 2</a></li>
+                    <li><a href="services.html">Consulting Services</a></li>
+                    <li><a href="guides.html">Investment Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Legal & Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="resources.html">Due Diligence Checklist</a></li>
+                    <li><a href="about.html">about Us</a></li>
+                    <li><a href="contact.html">Contact Support</a></li>
+                    <li><a href="booking.html">Book Strategy Call</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Market Updates</h3>
+                <p>Subscribe to receive listing notices of upcoming county tax deed auctions and lien calendars.</p>
+                <div class="footer-newsletter">
+                    <input type="email" placeholder="Enter your email" aria-label="Newsletter email">
+                    <button type="button" aria-label="Subscribe">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 TaxLienAdvisors LLC. all Rights Reserved. Financial consulting services are subject to market risks.</p>
+            <p>Designed with vanilla standards. Fully accessible (a11y).</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/main.js" defer></script>
+</body>
+</html>
+
