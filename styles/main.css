@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
-    --primary: #1A2942;       /* Refined Midnight Blue */
-    --primary-rgb: 26, 41, 66;
-    --secondary: #2C4263;     /* Muted Steel Blue */
-    --accent: #B89966;        /* Antique Gold */
-    --accent-hover: #CFB282;  /* Soft Gold */
-    --accent-rgb: 184, 153, 102;
+    --primary: #2E3A46;
+    --primary-rgb: 46, 58, 70;
+    --secondary: #4A5D70;
+    --accent: #0F8A7E;
+    --accent-hover: #14A99B;
+    --accent-rgb: 15, 138, 126;
     
-    --bg: #F4F6F8;            /* Soft Pearl */
-    --bg-surface: #FFFFFF;    /* Pure White */
-    --bg-secondary: #E8EDF2;  /* Slightly darker pearl for section contrast */
+    --bg: #F2F4F5;
+    --bg-surface: #FFFFFF;
+    --bg-secondary: #E9EBED;
     --bg-navbar: rgba(255, 255, 255, 0.95);
     
-    --text: #2D3748;          /* Professional Slate */
-    --text-muted: #718096;    /* Cool Gray */
-    --text-inverse: #FFFFFF;  /* Light Text */
+    --text: #1B1F23;
+    --text-muted: #5F6B76;
+    --text-inverse: #FFFFFF;
     
-    --border: #E2E8F0;
+    --border: #DCE1E4;
     
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
@@ -32,18 +32,19 @@
 }
 
 [data-theme="dark"] {
-    --primary: #E2E8F0;
-    --secondary: #A0AEC0;
-    --bg: #0F172A;            /* Slate Black */
-    --bg-surface: #1E293B;    /* Slate Dark */
-    --bg-secondary: #162032;  /* Slightly lighter dark for section contrast */
-    --bg-navbar: rgba(15, 23, 42, 0.95);
+    --primary: #E8ECEE; /* Kept light for heading text readability, using Primary #243038 for header backgrounds if needed */
+    --primary-dark: #243038; 
+    --secondary: #3B4E59;
+    --bg: #12181D;
+    --bg-surface: #1B2329;
+    --bg-secondary: #161D23;
+    --bg-navbar: rgba(27, 35, 41, 0.95); /* matching surface */
     
-    --text: #F8FAFC;          /* Bright Slate */
-    --text-muted: #94A3B8;    /* Muted Gray */
-    --text-inverse: #0F172A;
+    --text: #E8ECEE;
+    --text-muted: #8C99A3;
+    --text-inverse: #1B1F23;
     
-    --border: #334155;
+    --border: #2C3941;
     
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
     --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -1px rgba(0,0,0,0.3);
